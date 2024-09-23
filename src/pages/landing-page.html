@@ -4,54 +4,215 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <!-- <link rel="stylesheet" href="globals.css" /> -->
     <link rel="stylesheet" href="../output.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- import Sansita Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script src="../scripts/carousel.js"></script> -->
   </head>
-  <body class="bg-[#E7E6E2]">
+  <body class="bg-[#E7E6E2] py-6">
     <!-- Background -->
-    <div class="flex flex-col h-screen justify-between">
-    <!-- Navbar component -->
-    <header id="navbar-tob" class="fixed top-0 w-full">
-    <nav class="bg-[#805C3A] px-8">
-        <div class="w-full text-white">
-          <ul class="flex justify-between text-xl">
-            <li class= "py-2 font-sansita ">
-              <a href="#" class="text-xl">The Old <br>Batavia</a>
-            </li>
-            <li class="py-6">
-              <a href="#">Museum</a>
-            </li>
-            <li class="py-6">
-              <a href="#">Koleksi</a>
-            </li>
-            <li class="py-6">
-              <a href="#">Informasi</a>
-            </li>
-            <li class="py-6">
-              <a href="#">Kontak</a>
-            </li>
-          </ul>
+    <div class="py-12">
+      <div class="flex flex-col justify-between">
+        <!-- Navbar component -->
+        <header style="z-index: 1" id="navbar-tob" class="fixed top-0 w-full">
+          <nav class="bg-[#805C3A] px-8">
+            <div class="w-full text-white">
+              <ul class="flex justify-between text-xl">
+                <li class="py-2 font-sansita">
+                  <a href="#" class="text-xl">The Old <br />Batavia</a>
+                </li>
+                <li class="py-6">
+                  <a href="#">Museum</a>
+                </li>
+                <li class="py-6">
+                  <a href="#">Koleksi</a>
+                </li>
+                <li class="py-6">
+                  <a href="#">Informasi</a>
+                </li>
+                <li class="py-6">
+                  <a href="#">Kontak</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <div class="relative">
+          <div class="slide relative">
+            <img class="object-cover w-full" src="../../images/fatahilah.png" />
+            <div
+              class="absolute bottom-0 w-full bg-black/40 text-center text-white"
+            >
+              <p class="font-sansita text-xl">
+                Museum <br />
+                Fatahilah <br />
+                <br />
+              </p>
+            </div>
+          </div>
+
+          <div class="slide relative">
+            <img class="object-cover w-full" src="../../images/wayang.png" />
+            <div
+              class="absolute bottom-0 w-full bg-black/40 text-center text-white"
+            >
+              <p class="font-sansita text-xl">
+                Museum <br />
+                Wayang <br />
+                <br />
+              </p>
+            </div>
+          </div>
+
+          <div class="slide relative">
+            <img
+              class="object-cover w-full"
+              src="../../images/bank indonesia.png"
+            />
+            <div
+              class="absolute bottom-0 w-full bg-black/40 text-center text-white"
+            >
+              <p class="font-sansita text-xl">
+                Museum <br />
+                Bank Indonesia <br />
+                <br />
+              </p>
+            </div>
+          </div>
+
+          <div class="slide relative">
+            <img class="object-cover w-full" src="../../images/seni rupa.png" />
+            <div
+              class="absolute bottom-0 w-full bg-black/40 text-center text-white"
+            >
+              <p class="font-sansita text-xl">
+                Museum <br />
+                Seni Rupa dan Keramik <br />
+                <br />
+              </p>
+            </div>
+          </div>
+
+          <div class="slide relative">
+            <img
+              class="object-cover w-full"
+              src="../../images/bank mandiri.png"
+            />
+            <div
+              class="absolute bottom-0 w-full bg-black/40 text-center text-white"
+            >
+              <p class="font-sansita text-xl">
+                Museum <br />
+                Bank Mandiri <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <!-- The previous button -->
+          <a
+            class="absolute left-0 top-1/2 p-4 -translate-y-1/2 text-white hover:text-amber-500 cursor-pointer"
+            onclick="moveSlide(-1)"
+            >❮</a
+          >
+
+          <!-- The next button -->
+          <a
+            class="absolute right-0 top-1/2 p-4 -translate-y-1/2 text-white hover:text-amber-500 cursor-pointer"
+            onclick="moveSlide(1)"
+            >❯</a
+          >
         </div>
+        <!-- The dots -->
+        <div style="top: -20px" class="relative flex justify-center space-x-5">
+          <div
+            class="dot w-4 h-4 rounded-full cursor-pointer"
+            onclick="currentSlide(1)"
+          ></div>
+          <div
+            class="dot w-4 h-4 rounded-full cursor-pointer"
+            onclick="currentSlide(2)"
+          ></div>
+          <div
+            class="dot w-4 h-4 rounded-full cursor-pointer"
+            onclick="currentSlide(3)"
+          ></div>
+          <div
+            class="dot w-4 h-4 rounded-full cursor-pointer"
+            onclick="currentSlide(4)"
+          ></div>
+          <div
+            class="dot w-4 h-4 rounded-full cursor-pointer"
+            onclick="currentSlide(5)"
+          ></div>
+        </div>
+
+        <!-- Javascript code -->
+        <script>
+          // set the default active slide to the first one
+          let slideIndex = 1;
+          showSlide(slideIndex);
+
+          // change slide with the prev/next button
+          function moveSlide(moveStep) {
+            showSlide((slideIndex += moveStep));
+          }
+
+          // change slide with the dots
+          function currentSlide(n) {
+            showSlide((slideIndex = n));
+          }
+
+          function showSlide(n) {
+            let i;
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {
+              slideIndex = 1;
+            }
+            if (n < 1) {
+              slideIndex = slides.length;
+            }
+
+            // hide all slides
+            for (i = 0; i < slides.length; i++) {
+              slides[i].classList.add("hidden");
+            }
+
+            // remove active status from all dots
+            for (i = 0; i < dots.length; i++) {
+              dots[i].classList.remove("bg-[#717171]");
+              dots[i].classList.add("bg-[#E8E6E3]");
+            }
+
+            // show the active slide
+            slides[slideIndex - 1].classList.remove("hidden");
+
+            // highlight the active dot
+            dots[slideIndex - 1].classList.remove("bg-[#E8E6E3]");
+            dots[slideIndex - 1].classList.add("bg-[#717171]");
+          }
+        </script>
+        <footer id="footer-tob" class="bg-[#805C3A] px-8">
+          <div class="w-full text-white">
+            <ul class="flex text-xl">
+              <li class="flex py-1 font-sansita">
+                <a href="#" class="text-xl">The Old <br />Batavia</a>
+              </li>
+              <li class="flex mx-auto py-2 text-center">
+                Copyright © The Old Batavia <br />
+                Taman Fatahillah No.1, Kawasan Kota Tua, Pinangsia, Kec. Taman
+                Sari, Kota Jakarta Barat, DKI Jakarta, Indonesia
+              </li>
+            </ul>
+          </div>
+        </footer>
       </div>
-    </nav>
-  </header>
-  <!-- footer component -->
-    <footer id="footer-tob" class="bg-[#805C3A] px-8">
-      <div class="w-full text-white">
-        <ul class="flex text-xl">
-          <li class= "flex py-1 font-sansita">
-            <a href="#" class="text-xl">The Old <br>Batavia</a>
-          </li>
-          <li class="flex mx-auto py-2 text-center">
-              Copyright © The Old Batavia <br> Taman Fatahillah No.1, Kawasan Kota Tua, Pinangsia, Kec. Taman Sari, Kota Jakarta Barat, DKI Jakarta, Indonesia
-          </li>
-        </ul>
-      </div>
-    </footer>
     </div>
   </body>
 </html>
