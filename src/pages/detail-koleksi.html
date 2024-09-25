@@ -29,98 +29,105 @@
     </script>
   </head>
   <body class="bg-[#E7E6E2]">
-    <div class="flex flex-col justify-between">
-      <div class="py-12">
-        <!-- Navbar component -->
-        <header style="z-index: 1" id="navbar-tob" class="fixed top-0 w-full">
-          <nav class="bg-[#805C3A] px-8">
-            <div class="w-full text-white">
-              <ul class="flex justify-between text-xl">
-                <li class="py-2 font-sansita">
-                  <a href="landing-page.html" class="text-xl"
-                    >The Old <br />Batavia</a
-                  >
-                </li>
-                <li class="py-6">
-                  <a href="landing-page.html">Museum</a>
-                </li>
-                <li class="py-6">
-                  <a href="koleksi.html">Koleksi</a>
-                </li>
-                <li class="py-6">
-                  <a href="event.html">Informasi</a>
-                </li>
-                <li class="py-6">
-                  <a href="contact-us.html">Kontak</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-        <div class="grid grid-cols-10">
-          <div class="bg-[#E3E1DE] col-span-3">
-            <br />
-            <br />
-            <div class="grid grid-cols-1 m-10">
-              <div class="flex flex-col items-center">
-                <div
-                  id="selection-1"
-                  class="selection w-full p-3 flex justify-center content-center bg-[#A5A4A3] rounded-t-xl"
-                  onclick="changeClass('selection-1')"
+    <!-- Navbar component -->
+      <header id="navbar-tob" class="sticky top-0 w-full">
+        <nav class="bg-[#805C3A] px-8">
+          <div class="w-full text-white">
+            <ul class="flex justify-between text-xl">
+              <li class="py-2 font-sansita">
+                <a href="landing-page.html" class="text-xl"
+                  >The Old <br />Batavia</a
                 >
-                  Semua Museum
-                </div>
-                <div
-                  id="selection-2"
-                  class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3]"
-                  onclick="changeClass('selection-2')"
-                >
-                  Museum Fatahilah
-                </div>
-                <div
-                  id="selection-3"
-                  class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3]"
-                  onclick="changeClass('selection-3')"
-                >
-                  Museum Wayang
-                </div>
-                <div
-                  id="selection-4"
-                  class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3]"
-                  onclick="changeClass('selection-4')"
-                >
-                  Museum Bank Indonesia
-                </div>
-                <div
-                  id="selection-5"
-                  class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3]"
-                  onclick="changeClass('selection-5')"
-                >
-                  Museum Seni Rupa dan Keramik
-                </div>
-                <div
-                  id="selection-6"
-                  class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3] rounded-b-xl"
-                  onclick="changeClass('selection-6')"
-                >
-                  Museum Bank Mandiri
-                </div>
-              </div>
-            </div>
+              </li>
+              <li class="py-6">
+                <a href="landing-page.html">Museum</a>
+              </li>
+              <li class="py-6">
+                <a href="koleksi.html">Koleksi</a>
+              </li>
+              <li class="py-6">
+                <a href="event.html">Informasi</a>
+              </li>
+              <li class="py-6">
+                <a href="contact-us.html">Kontak</a>
+              </li>
+            </ul>
           </div>
-          <div class="bg-[#E7E6E2] col-start-4 col-end-11">
-            <div
-              class="flex justify-between m-12 w-xl h-lg bg-[#CBBA9E] rounded-xl items-center"
-            >
-              <p class="p-4">Sumber Koleksi</p>
-              <!-- TODO : make proper dropdown -->
-              <button class="flex justify-between bg-[#EAE3D8] rounded-xl mx-6">
-                <p class="p-2">Semua Museum</p>
-                <p class="p-2">×</p>
+        </nav>
+      </header>
+      <div class="grid grid-cols-10">
+        <div class="bg-[#E3E1DE] col-span-3">
+          <br />
+          <br />
+          <div class="grid grid-cols-1 m-10">
+            <div class="flex flex-col items-center">
+              <div
+                id="selection-1"
+                class="selection w-full p-3 flex justify-center content-center bg-[#A5A4A3] rounded-t-xl"
+                onclick="changeClass('selection-1')"
+              >
+                Semua Museum
+              </div>
+              <div
+                id="selection-2"
+                class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3]"
+                onclick="changeClass('selection-2')"
+              >
+                Museum Fatahilah
+              </div>
+              <div
+                id="selection-3"
+                class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3]"
+                onclick="changeClass('selection-3')"
+              >
+                Museum Wayang
+              </div>
+              <div
+                id="selection-4"
+                class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3]"
+                onclick="changeClass('selection-4')"
+              >
+                Museum Bank Indonesia
+              </div>
+              <div
+                id="selection-5"
+                class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3]"
+                onclick="changeClass('selection-5')"
+              >
+                Museum Seni Rupa dan Keramik
+              </div>
+              <div
+                id="selection-6"
+                class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3] rounded-b-xl"
+                onclick="changeClass('selection-6')"
+              >
+                Museum Bank Mandiri
               </div>
             </div>
           </div>
         </div>
+        <div class="bg-[#E7E6E2] col-start-4 col-end-11">
+          <div
+            class="flex justify-between m-12 w-xl h-lg bg-[#CBBA9E] rounded-xl items-center"
+          >
+            <p class="p-4">Sumber Koleksi</p>
+            <!-- TODO : make proper dropdown -->
+            <button class="flex justify-between bg-[#EAE3D8] rounded-xl mx-6">
+              <p class="p-2">Semua Museum</p>
+              <p class="p-2">×</p>
+            </button>
+          </div>
+          <div class="bg-[#A3A19B] m-6 p-2 rounded-xl ">
+            <p class="text-4xl text-center p-6">Keris</p>
+            <div class="flex justify-center"><img class="max-h-80" src="../../images/keris detail.png" alt="Keris"></div>
+            <p class="text-left p-8">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam reiciendis molestiae, saepe vero magni corporis perspiciatis. Non quae accusamus voluptas odio at, sunt sequi et magnam. Incidunt facilis neque obcaecati?
+              Inventore at praesentium distinctio quos neque provident reprehenderit corrupti soluta voluptatibus esse iste ipsam nam odio, ratione possimus deleniti natus rem quasi numquam! Eaque quod, deleniti recusandae assumenda mollitia iure?
+              Deserunt explicabo temporibus illum? Sit delectus explicabo, tempore sapiente, esse veritatis quam dolorem vel incidunt et, aliquam inventore a quas ipsa officia nobis minima sequi! Aliquid explicabo doloribus ducimus? Numquam.
+            </p>
+          </div>
+        </div>
+      </div>
         <!-- Footer -->
         <footer id="footer-tob" class="bg-[#805C3A] px-8">
           <div class="w-full text-white">
@@ -138,7 +145,6 @@
             </ul>
           </div>
         </footer>
-      </div>
     </div>
   </body>
 </html>

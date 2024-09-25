@@ -13,10 +13,9 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <div class="flex flex-col justify-between py-12">
-      <!-- Navbar component -->
-      <header style="z-index: 1" id="navbar-tob" class="fixed top-0 w-full">
+  <body class="bg-[#E7E6E2]">
+    <!-- Navbar component -->
+      <header id="navbar-tob" class="sticky top-0 w-full">
         <nav class="bg-[#805C3A] px-8">
           <div class="w-full text-white">
             <ul class="flex justify-between text-xl">
@@ -41,6 +40,174 @@
           </div>
         </nav>
       </header>
+      <div class="grid grid-cols-10 pt-12">
+        <div class="col-span-2"></div>
+        <div class="col-span-6">
+          <p class="text-3xl m-6">Acara</p>
+          <div id="carousel landing" class="relative">
+          <div class="slide relative">
+            <img class="object-cover w-full" src="../../images/event 1.png" />
+            <a href="./detail-event.html">
+              <div
+                class="absolute bottom-0 w-full bg-black/40 text-center text-white"
+              >
+                <div class="px-12">
+                  <p class="p-6 text-left text-md">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellat cumque placeat consectetur. Fuga quam, in, unde esse
+                    labore quidem corrupti cum consectetur consequuntur dolore,
+                    necessitatibus officia? Baca selengkapnya...
+                    <br />
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="slide relative">
+            <img class="object-cover w-full" src="../../images/event 2.png" />
+            <a href="./detail-event.html">
+              <div
+                class="absolute bottom-0 w-full bg-black/40 text-center text-white"
+              >
+                <div class="px-12">
+                  <p class="p-6 text-left text-md">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellat cumque placeat consectetur. Fuga quam, in, unde esse
+                    labore quidem corrupti cum consectetur consequuntur dolore,
+                    necessitatibus officia? Baca selengkapnya...
+                    <br />
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="slide relative">
+            <img class="object-cover w-full" src="../../images/event 3.png" />
+            <a href="./detail-event.html">
+              <div
+                class="absolute bottom-0 w-full bg-black/40 text-center text-white "
+              >
+                <div class="px-12">
+                  <p class="p-6 text-left text-md">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellat cumque placeat consectetur. Fuga quam, in, unde esse
+                    labore quidem corrupti cum consectetur consequuntur dolore,
+                    necessitatibus officia? Baca selengkapnya...
+                    <br />
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- The previous button -->
+          <a
+            class="absolute left-0 top-1/2 p-4 -translate-y-1/2 text-white hover:text-amber-500 cursor-pointer"
+            onclick="moveSlide(-1)"
+            >❮</a
+          >
+          <!-- The next button -->
+          <a
+            class="absolute right-0 top-1/2 p-4 -translate-y-1/2 text-white hover:text-amber-500 cursor-pointer"
+            onclick="moveSlide(1)"
+            >❯</a
+          >
+        </div>
+      <!-- The dots -->
+      <div style="top: -20px" class="relative flex justify-center space-x-5">
+        <div
+          class="dot w-4 h-4 rounded-full cursor-pointer"
+          onclick="currentSlide(1)"
+        ></div>
+        <div
+          class="dot w-4 h-4 rounded-full cursor-pointer"
+          onclick="currentSlide(2)"
+        ></div>
+        <div
+          class="dot w-4 h-4 rounded-full cursor-pointer"
+          onclick="currentSlide(3)"
+        ></div>
+      </div>
+      <br>
+      <br>
+      <div class="px-18">
+        <p class="px-12 text-3xl">
+          Pengumuman
+        </p>
+        <div class="m-6">
+          <a href="./detail-event.html">
+            <div class="w-full bg-[#BDB7AB] p-3 flex justify-center border border-black">
+              Museum Fatahilah ditutup sementara untuk pemeliharaan.
+            </div>
+          </a>
+          <a href="./detail-event.html">
+            <div class="w-full bg-[#BDB7AB] p-3 flex justify-center border border-black">
+              Pameran Spesial dari Museum Bank Indonesia menyambut HUT RI ke 79
+            </div>
+          </a>
+          <a href="./detail-event.html">
+            <div class="w-full bg-[#BDB7AB] p-3 flex justify-center border border-black">
+              Koleksi baru akan segera ditambahkan ke Museum Wayang.
+            </div>
+          </a>
+          <div class="w-full bg-[#D9D9D9] p-3 flex justify-center border border-black justify-center">
+            Selengkapnya v
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- Javascript code -->
+      <script>
+        // set the default active slide to the first one
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        // change slide with the prev/next button
+        function moveSlide(moveStep) {
+          showSlide((slideIndex += moveStep));
+        }
+
+        // change slide with the dots
+        function currentSlide(n) {
+          showSlide((slideIndex = n));
+        }
+
+        function showSlide(n) {
+          let i;
+          const slides = document.getElementsByClassName("slide");
+          const dots = document.getElementsByClassName("dot");
+
+          if (n > slides.length) {
+            slideIndex = 1;
+          }
+          if (n < 1) {
+            slideIndex = slides.length;
+          }
+
+          // hide all slides
+          for (i = 0; i < slides.length; i++) {
+            slides[i].classList.add("hidden");
+          }
+
+          // remove active status from all dots
+          for (i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("bg-[#717171]");
+            dots[i].classList.add("bg-[#E8E6E3]");
+          }
+
+          // show the active slide
+          slides[slideIndex - 1].classList.remove("hidden");
+
+          // highlight the active dot
+          dots[slideIndex - 1].classList.remove("bg-[#E8E6E3]");
+          dots[slideIndex - 1].classList.add("bg-[#717171]");
+        }
+      </script>
+        </div>
+
       <!-- Footer -->
       <footer id="footer-tob" class="bg-[#805C3A] px-8">
         <div class="w-full text-white">
