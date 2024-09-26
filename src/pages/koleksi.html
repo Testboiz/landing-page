@@ -16,6 +16,7 @@
       function changeClass(id) {
         const div = document.getElementById(id);
         const divlist = document.getElementsByClassName("selection");
+        const dropdown = document.getElementById("dropdown");
         // find the div that is selected and change it to unselected color
         for (divs of divlist) {
           if (divs.classList.contains("bg-[#A5A4A3]")) {
@@ -25,7 +26,18 @@
         }
         // change the selected div's color to selected color
         div.classList.replace("bg-[#E8E6E3]", "bg-[#A5A4A3]");
+        dropdown.value = id;
       }
+    </script>
+    <script>
+      window.onload = () => {
+        document
+          .getElementById("dropdown")
+          .addEventListener("change", function (event) {
+            const selection = event.target.value;
+            changeClass(selection);
+          });
+      };
     </script>
   </head>
   <!-- TODO adjust font -->
@@ -112,11 +124,17 @@
           class="flex justify-between m-12 bg-[#CBBA9E] rounded-xl items-center"
         >
           <p class="p-4">Sumber Koleksi</p>
-          <!-- TODO : make proper dropdown -->
-          <button class="flex justify-between bg-[#EAE3D8] rounded-xl mx-6">
-            <p class="p-2">Semua Museum</p>
-            <p class="p-2">×</p>
-          </button>
+          <select
+            id="dropdown"
+            class="bg-[#EAE3D8] rounded-lg mx-6 px-3 min-h-10"
+          >
+            <option value="selection-1">Semua Museum</option>
+            <option value="selection-2">Museum Fatahilah</option>
+            <option value="selection-3">Museum Wayang</option>
+            <option value="selection-4">Museum Bank Indonesia</option>
+            <option value="selection-5">Museum Seni Rupa dan Keramik</option>
+            <option value="selection-6">Museum Bank Mandiri</option>
+          </select>
         </div>
         <div class="bg-[#A3A19B] m-6 rounded-xl">
           <div class="grid grid-cols-3">
