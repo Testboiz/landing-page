@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="bg-[#E7E6E2]">
     <!-- Navbar component -->
     <header id="navbar-tob" class="sticky top-0 w-full">
       <nav class="bg-[#805C3A] px-8">
@@ -40,6 +40,79 @@
         </div>
       </nav>
     </header>
+    <div class="bg-[#A3A19B] h-16 flex justify-center items-center">
+      <p class="text-xl font-bold">Kontak Kami</p>
+    </div>
+    <p class="text-lg font-bold text-center my-6">Online Inquiry</p>
+    <div class="flex justify-center items-center">
+      <!-- TODO : modify the placeholder (if possible) -->
+      <form class="w-10/12">
+        <div class="my-4">
+          <label for="name"><div class="font-bold my-2">Nama</div></label>
+          <input
+            class="rounded w-full"
+            placeholder="Masukkan Nama Anda"
+            type="text"
+            name="Name"
+            id="name"
+          />
+        </div>
+        <div class="my-4">
+          <label for="topic"><div class="font-bold my-2">Topik</div></label>
+          <input
+            class="rounded w-full"
+            placeholder="Masukkan Topik Anda"
+            type="text"
+            name="Topic"
+            id="topic"
+          />
+        </div>
+        <div class="my-4">
+          <label for="email"><div class="font-bold my-2">Email</div></label>
+          <input
+            class="rounded w-full"
+            placeholder="Masukkan Email Anda"
+            type="email"
+            name="Email"
+            id="email"
+          />
+        </div>
+        <div class="my-4">
+          <label for="message"
+            ><div class="font-bold my-2">Pesan Anda</div></label
+          >
+          <textarea
+            class="resize-none rounded w-full"
+            placeholder="Masukkan Pesan Anda"
+            name="pesan"
+            id="message"
+          ></textarea>
+        </div>
+        <button class="w-full p-1 bg-black rounded text-center">
+          <p class="text-white">Kirim Pesan Anda</p>
+        </button>
+      </form>
+    </div>
+    <p class="text-lg font-bold text-center my-6">Tentang Kami</p>
+    <div class="flex justify-center">
+      <p class="text-lg max-w-sm text-center mb-3">
+        The Old Batavia adalah organisasi yang menaungi berbagai museum dan
+        tempat atraksi yang berada di lingkungan Kawasan Kota Tua
+        <br />
+        <br />
+        Di Kawasan Kota Tua terdapat sangat banyak sekali peninggalan masa
+        Kolonial Belanda sejak awal masa penjajahan Belanda di Indonesia selama
+        3 abad.
+        <br />
+        <br />
+        Kami memiliki visi dan misi untuk mengelola, mempromosikan, dan juga
+        menjaga kelestarian dari cagar budaya bekas peninggalan Kota Tua
+        Batavia.
+        <br />
+        <br />
+      </p>
+    </div>
+
     <!-- Footer -->
     <footer id="footer-tob" class="bg-[#805C3A] px-8">
       <div class="w-full text-white">
