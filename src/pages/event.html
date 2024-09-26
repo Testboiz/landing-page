@@ -12,39 +12,61 @@
       href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap"
       rel="stylesheet"
     />
+    <script>
+      function expand() {
+        const hiddenDivs = document.getElementById("expanded");
+        const selengkapnyaDown = document.getElementById("selengkapnya-down");
+        selengkapnyaDown.classList.add("hidden");
+        hiddenDivs.classList.remove("hidden");
+        const divs = document.querySelectorAll("#expanded .to-hide");
+        divs.forEach((div) => {
+          div.classList.remove("hidden");
+        });
+      }
+      function collapse() {
+        const hiddenDivs = document.getElementById("expanded");
+        const selengkapnyaDown = document.getElementById("selengkapnya-down");
+        selengkapnyaDown.classList.remove("hidden");
+        hiddenDivs.classList.add("hidden");
+        const divs = document.querySelectorAll("#expanded .to-hide");
+        divs.forEach((div) => {
+          div.classList.add("hidden");
+        });
+      }
+    </script>
   </head>
   <body class="bg-[#E7E6E2]">
     <!-- Navbar component -->
-      <header id="navbar-tob" class="sticky top-0 w-full">
-        <nav class="bg-[#805C3A] px-8">
-          <div class="w-full text-white">
-            <ul class="flex justify-between text-xl">
-              <li class="py-2 font-sansita">
-                <a href="landing-page.html" class="text-xl"
-                  >The Old <br />Batavia</a
-                >
-              </li>
-              <li class="py-6">
-                <a href="landing-page.html">Museum</a>
-              </li>
-              <li class="py-6">
-                <a href="koleksi.html">Koleksi</a>
-              </li>
-              <li class="py-6">
-                <a href="event.html">Informasi</a>
-              </li>
-              <li class="py-6">
-                <a href="contact-us.html">Kontak</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-      <div class="grid grid-cols-10 pt-12">
-        <div class="col-span-2"></div>
-        <div class="col-span-6">
-          <p class="text-3xl m-6">Acara</p>
-          <div id="carousel landing" class="-z-10 relative">
+    <header id="navbar-tob" class="sticky top-0 w-full">
+      <nav class="bg-[#805C3A] px-8">
+        <div class="w-full text-white">
+          <ul class="flex justify-between text-xl">
+            <li class="py-2 font-sansita">
+              <a href="landing-page.html" class="text-xl"
+                >The Old <br />Batavia</a
+              >
+            </li>
+            <li class="py-6">
+              <a href="landing-page.html">Museum</a>
+            </li>
+            <li class="py-6">
+              <a href="koleksi.html">Koleksi</a>
+            </li>
+            <li class="py-6">
+              <a href="event.html">Informasi</a>
+            </li>
+            <li class="py-6">
+              <a href="contact-us.html">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="grid grid-cols-10">
+      <div class="col-span-2"></div>
+      <div class="col-span-6">
+        <p class="text-3xl m-6">Acara</p>
+        <div id="carousel landing" class="-z-10 relative">
           <div class="slide relative">
             <img class="object-cover w-full" src="../../images/event 1.png" />
             <a href="./detail-event.html">
@@ -54,11 +76,11 @@
                 <div class="px-12">
                   <p class="p-6 text-left text-md">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellat cumque placeat consectetur. Fuga quam, in, unde esse
-                    labore quidem corrupti cum consectetur consequuntur dolore,
-                    necessitatibus officia? Baca selengkapnya...
+                    Repellat cumque placeat consectetur. Fuga quam, in, unde
+                    esse labore quidem corrupti cum consectetur consequuntur
+                    dolore, necessitatibus officia? Baca selengkapnya...
                     <br />
-                    <br>
+                    <br />
                   </p>
                 </div>
               </div>
@@ -73,11 +95,11 @@
                 <div class="px-12">
                   <p class="p-6 text-left text-md">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellat cumque placeat consectetur. Fuga quam, in, unde esse
-                    labore quidem corrupti cum consectetur consequuntur dolore,
-                    necessitatibus officia? Baca selengkapnya...
+                    Repellat cumque placeat consectetur. Fuga quam, in, unde
+                    esse labore quidem corrupti cum consectetur consequuntur
+                    dolore, necessitatibus officia? Baca selengkapnya...
                     <br />
-                    <br>
+                    <br />
                   </p>
                 </div>
               </div>
@@ -87,16 +109,16 @@
             <img class="object-cover w-full" src="../../images/event 3.png" />
             <a href="./detail-event.html">
               <div
-                class="absolute bottom-0 w-full bg-black/40 text-center text-white "
+                class="absolute bottom-0 w-full bg-black/40 text-center text-white"
               >
                 <div class="px-12">
                   <p class="p-6 text-left text-md">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellat cumque placeat consectetur. Fuga quam, in, unde esse
-                    labore quidem corrupti cum consectetur consequuntur dolore,
-                    necessitatibus officia? Baca selengkapnya...
+                    Repellat cumque placeat consectetur. Fuga quam, in, unde
+                    esse labore quidem corrupti cum consectetur consequuntur
+                    dolore, necessitatibus officia? Baca selengkapnya...
                     <br />
-                    <br>
+                    <br />
                   </p>
                 </div>
               </div>
@@ -115,47 +137,106 @@
             >❯</a
           >
         </div>
-      <!-- The dots -->
-      <div style="top: -20px" class="relative flex justify-center space-x-5">
-        <div
-          class="dot w-4 h-4 rounded-full cursor-pointer"
-          onclick="currentSlide(1)"
-        ></div>
-        <div
-          class="dot w-4 h-4 rounded-full cursor-pointer"
-          onclick="currentSlide(2)"
-        ></div>
-        <div
-          class="dot w-4 h-4 rounded-full cursor-pointer"
-          onclick="currentSlide(3)"
-        ></div>
-      </div>
-      <br>
-      <br>
-      <div class="px-18">
-        <p class="px-12 text-3xl">
-          Pengumuman
-        </p>
+        <!-- The dots -->
+        <div style="top: -20px" class="relative flex justify-center space-x-5">
+          <div
+            class="dot w-4 h-4 rounded-full cursor-pointer"
+            onclick="currentSlide(1)"
+          ></div>
+          <div
+            class="dot w-4 h-4 rounded-full cursor-pointer"
+            onclick="currentSlide(2)"
+          ></div>
+          <div
+            class="dot w-4 h-4 rounded-full cursor-pointer"
+            onclick="currentSlide(3)"
+          ></div>
+        </div>
+        <p class="px-12 text-3xl">Pengumuman</p>
         <div class="m-6">
           <a href="./detail-pengumuman.html">
-            <div class="w-full bg-[#BDB7AB] p-3 flex justify-center border border-black">
+            <div
+              class="w-full bg-[#BDB7AB] p-3 flex justify-center border border-black"
+            >
               Museum Fatahilah ditutup sementara untuk pemeliharaan.
             </div>
           </a>
           <a href="./detail-pengumuman.html">
-            <div class="w-full bg-[#BDB7AB] p-3 flex justify-center border border-black">
+            <div
+              class="w-full bg-[#BDB7AB] p-3 flex justify-center border border-black"
+            >
               Pameran Spesial dari Museum Bank Indonesia menyambut HUT RI ke 79
             </div>
           </a>
           <a href="./detail-pengumuman.html">
-            <div class="w-full bg-[#BDB7AB] p-3 flex justify-center border border-black">
+            <div
+              class="w-full bg-[#BDB7AB] p-3 flex justify-center border border-black"
+            >
               Koleksi baru akan segera ditambahkan ke Museum Wayang.
             </div>
           </a>
-          <div class="w-full bg-[#D9D9D9] p-3 flex justify-center border border-black justify-center">
-            Selengkapnya v
+          <div
+            onclick="expand()"
+            id="selengkapnya-down"
+            class="w-full bg-[#D9D9D9] p-3 flex justify-center items-center border border-black"
+          >
+            Selengkapnya
+            <svg
+              class="h-5 w-5 text-gray-400"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd"
+              />
+            </svg>
           </div>
-        </div>
+          <div id="expanded">
+            <a href="./detail-pengumuman.html">
+              <div
+                class="to-hide w-full bg-[#BDB7AB] p-3 flex justify-center border border-black hidden"
+              >
+                Perubahan jadwal buka Museum Bank Indonesia
+              </div>
+            </a>
+            <a href="./detail-pengumuman.html">
+              <div
+                class="to-hide w-full bg-[#BDB7AB] p-3 flex justify-center border border-black hidden"
+              >
+                Pameran Spesial dari Museum Wayang menyambut HUT RI ke 79
+              </div>
+            </a>
+            <a href="./detail-pengumuman.html">
+              <div
+                class="to-hide w-full bg-[#BDB7AB] p-3 flex justify-center border border-black hidden"
+              >
+                Koleksi mata uang Rp 75.000 akan segera ditambahkan ke Museum
+                Bank Indonesia
+              </div>
+            </a>
+            <div
+              onclick="collapse()"
+              id="selengkapnya-down"
+              class="to-hide w-full bg-[#D9D9D9] p-3 flex justify-center items-center border border-black hidden"
+            >
+              Selengkapnya
+              <svg
+                class="h-5 w-5 text-gray-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -206,25 +287,24 @@
           dots[slideIndex - 1].classList.add("bg-[#717171]");
         }
       </script>
-        </div>
-
-      <!-- Footer -->
-      <footer id="footer-tob" class="bg-[#805C3A] px-8">
-        <div class="w-full text-white">
-          <ul class="flex text-xl">
-            <li class="flex py-1 font-sansita">
-              <a href="landing-page.html" class="text-xl"
-                >The Old <br />Batavia</a
-              >
-            </li>
-            <li class="flex mx-auto py-2 text-center">
-              Copyright © The Old Batavia <br />
-              Taman Fatahillah No.1, Kawasan Kota Tua, Pinangsia, Kec. Taman
-              Sari, Kota Jakarta Barat, DKI Jakarta, Indonesia
-            </li>
-          </ul>
-        </div>
-      </footer>
     </div>
+
+    <!-- Footer -->
+    <footer id="footer-tob" class="bg-[#805C3A] px-8">
+      <div class="w-full text-white">
+        <ul class="flex text-xl">
+          <li class="flex py-1 font-sansita">
+            <a href="landing-page.html" class="text-xl"
+              >The Old <br />Batavia</a
+            >
+          </li>
+          <li class="flex mx-auto py-2 text-center">
+            Copyright © The Old Batavia <br />
+            Taman Fatahillah No.1, Kawasan Kota Tua, Pinangsia, Kec. Taman Sari,
+            Kota Jakarta Barat, DKI Jakarta, Indonesia
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

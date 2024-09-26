@@ -588,6 +588,10 @@ video {
   }
 }
 
+.collapse {
+  visibility: collapse;
+}
+
 .absolute {
   position: absolute;
 }
@@ -664,6 +668,10 @@ video {
   margin: 1.5rem;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .mx-6 {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -717,6 +725,14 @@ video {
 
 .-mr-1 {
   margin-right: -0.25rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .block {
