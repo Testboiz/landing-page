@@ -8,9 +8,10 @@ module.exports = {
         fadeOut: 'fadeOut 0.5s ease-in-out',
       },
       colors: {
-        custom_init: '#57544F',  // Replace with your color A
-        custom_mid: '#BAA16D',  // Replace with your color B
-        custom_end: '#BDB7AB',  // Replace with your color C
+        custom_init: '#57544F',
+        custom_mid: '#BAA16D',
+        custom_end: '#BDB7AB',
+        custom_carousel_caption: '#717171'
       },
       keyframes: {
         fadeIn: {

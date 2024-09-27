@@ -61,6 +61,7 @@
         const hiddenDivs = document.getElementById("expanded");
         const selengkapnyaDown = document.getElementById("selengkapnya-down");
         selengkapnyaDown.classList.remove("hidden");
+        selengkapnyaDown.classList.remove("fade-out");
 
         hiddenDivs.classList.remove("fade-in");
         hiddenDivs.classList.add("fade-out");
@@ -76,7 +77,7 @@
   </head>
   <body class="bg-[#E7E6E2]">
     <!-- Navbar component -->
-    <header id="navbar-tob" class="sticky top-0 w-full">
+    <header id="navbar-tob" class="z-10 sticky top-0 w-full">
       <nav class="bg-[#805C3A] px-8">
         <div class="w-full text-white">
           <ul class="flex justify-between text-xl">
@@ -102,22 +103,24 @@
       </nav>
     </header>
     <div class="grid grid-cols-10">
-      <div class="col-span-2"></div>
-      <div class="col-span-6">
-        <p class="text-3xl m-6">Acara</p>
-        <div id="carousel landing" class="-z-10 relative">
+      <div class="col-span-1"></div>
+      <div class="col-span-8">
+        <p class="whitespace-pre text-3xl m-6 w-3/4">&Tab;&Tab;Acara</p>
+        <div id="carousel landing" class="relative">
           <div class="slide relative">
             <img class="object-cover w-full" src="../../images/event 1.png" />
             <a href="./detail-event.html">
               <div
-                class="absolute bottom-0 w-full bg-black/40 text-center text-white"
+                class="absolute bottom-0 w-full bg-gradient-to-t from-black/40 to-custom_carousel_caption/40 text-center text-white"
               >
                 <div class="px-12">
-                  <p class="p-6 text-left text-md">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellat cumque placeat consectetur. Fuga quam, in, unde
-                    esse labore quidem corrupti cum consectetur consequuntur
-                    dolore, necessitatibus officia? Baca selengkapnya...
+                  <p class="w-3/4 mx-auto my-6 text-left text-md">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu..... Baca Selengkapnya
                     <br />
                     <br />
                   </p>
@@ -129,14 +132,16 @@
             <img class="object-cover w-full" src="../../images/event 2.png" />
             <a href="./detail-event.html">
               <div
-                class="absolute bottom-0 w-full bg-black/40 text-center text-white"
+                class="absolute bottom-0 w-full bg-gradient-to-t from-black/40 to-custom_carousel_caption/40 text-center text-white"
               >
                 <div class="px-12">
-                  <p class="p-6 text-left text-md">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellat cumque placeat consectetur. Fuga quam, in, unde
-                    esse labore quidem corrupti cum consectetur consequuntur
-                    dolore, necessitatibus officia? Baca selengkapnya...
+                  <p class="w-3/4 mx-auto my-6 text-left text-md">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu..... Baca Selengkapnya
                     <br />
                     <br />
                   </p>
@@ -148,14 +153,16 @@
             <img class="object-cover w-full" src="../../images/event 3.png" />
             <a href="./detail-event.html">
               <div
-                class="absolute bottom-0 w-full bg-black/40 text-center text-white"
+                class="absolute bottom-0 w-full bg-gradient-to-t from-black/40 to-custom_carousel_caption/40 text-center text-white"
               >
                 <div class="px-12">
-                  <p class="p-6 text-left text-md">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellat cumque placeat consectetur. Fuga quam, in, unde
-                    esse labore quidem corrupti cum consectetur consequuntur
-                    dolore, necessitatibus officia? Baca selengkapnya...
+                  <p class="w-3/4 mx-auto my-6 text-left text-md">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu..... Baca Selengkapnya
                     <br />
                     <br />
                   </p>
@@ -177,7 +184,10 @@
           >
         </div>
         <!-- The dots -->
-        <div style="top: -20px" class="relative flex justify-center space-x-5">
+        <div
+          style="top: -20px"
+          class="-z-10 relative flex justify-center space-x-5"
+        >
           <div
             class="dot w-4 h-4 rounded-full cursor-pointer"
             onclick="currentSlide(1)"
@@ -191,8 +201,8 @@
             onclick="currentSlide(3)"
           ></div>
         </div>
-        <p class="px-12 text-3xl">Pengumuman</p>
-        <div class="m-6">
+        <p class="whitespace-pre px-12 text-3xl">&Tab;&Tab;&Tab;Pengumuman</p>
+        <div class="mx-auto my-6 w-3/4">
           <a href="./detail-pengumuman.html">
             <div
               class="w-full bg-[#BDB7AB] p-3 flex justify-center border border-black"
@@ -217,21 +227,9 @@
           <div
             onclick="expand()"
             id="selengkapnya-down"
-            class="w-full bg-[#D9D9D9] p-3 flex justify-center items-center border border-black"
+            class="w-full bg-[#D9D9D9] p-3 flex text-gray-600 justify-center items-center border border-black"
           >
-            Selengkapnya
-            <svg
-              class="h-5 w-5 text-gray-400"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                clip-rule="evenodd"
-              />
-            </svg>
+            Selengkapnya...
           </div>
           <div id="expanded">
             <a href="./detail-pengumuman.html">
@@ -258,22 +256,10 @@
             </a>
             <div
               onclick="collapse()"
-              id="selengkapnya-down"
-              class="to-hide w-full bg-[#D9D9D9] p-3 flex justify-center items-center border border-black hidden"
+              id="selengkapnya-up"
+              class="to-hide w-full bg-[#D9D9D9] text-gray-600 p-3 flex justify-center items-center border border-black hidden"
             >
-              Selengkapnya
-              <svg
-                class="h-5 w-5 text-gray-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                  clip-rule="evenodd"
-                />
-              </svg>
+              Lebih Sedikit...
             </div>
           </div>
         </div>
