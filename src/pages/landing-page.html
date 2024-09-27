@@ -12,10 +12,37 @@
       href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .fade-in {
+        animation: fadeIn 1s ease-in-out forwards;
+      }
+
+      .fade-out {
+        animation: fadeOut 1s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
   <body class="bg-[#E7E6E2]">
     <!-- Navbar component -->
-    <header id="navbar-tob" class="sticky top-0 w-full">
+    <header id="navbar-tob" class="sticky top-0 w-full z-[1]">
       <nav class="bg-[#805C3A] px-8">
         <div class="w-full text-white">
           <ul class="flex justify-between text-xl">
@@ -40,10 +67,12 @@
         </div>
       </nav>
     </header>
-    <!-- TODO : add animation -->
-    <div id="carousel landing" class="relative">
-      <div class="slide relative">
-        <img class="object-cover w-full" src="../../images/fatahilah.png" />
+    <div id="carousel landing" class="relative -z-10">
+      <div class="slide absolute">
+        <img
+          class="object-cover w-full h-auto"
+          src="../../images/fatahilah.png"
+        />
         <div
           class="absolute bottom-0 w-full bg-black/40 text-center text-white"
         >
@@ -55,8 +84,8 @@
         </div>
       </div>
 
-      <div class="slide relative">
-        <img class="object-cover w-full" src="../../images/wayang.png" />
+      <div class="slide absolute">
+        <img class="object-cover w-full h-auto" src="../../images/wayang.png" />
         <div
           class="absolute bottom-0 w-full bg-black/40 text-center text-white"
         >
@@ -68,9 +97,9 @@
         </div>
       </div>
 
-      <div class="slide relative">
+      <div class="slide absolute">
         <img
-          class="object-cover w-full"
+          class="object-cover w-full h-auto"
           src="../../images/bank indonesia.png"
         />
         <div
@@ -84,8 +113,11 @@
         </div>
       </div>
 
-      <div class="slide relative">
-        <img class="object-cover w-full" src="../../images/seni rupa.png" />
+      <div class="slide absolute">
+        <img
+          class="object-cover w-full h-auto"
+          src="../../images/seni rupa.png"
+        />
         <div
           class="absolute bottom-0 w-full bg-black/40 text-center text-white"
         >
@@ -97,8 +129,11 @@
         </div>
       </div>
 
-      <div class="slide relative">
-        <img class="object-cover w-full" src="../../images/bank mandiri.png" />
+      <div class="slide absolute">
+        <img
+          class="object-cover w-full h-auto"
+          src="../../images/bank mandiri.png"
+        />
         <div
           class="absolute bottom-0 w-full bg-black/40 text-center text-white"
         >
@@ -109,49 +144,13 @@
           </p>
         </div>
       </div>
-      <!-- The previous button -->
-      <a
-        class="absolute left-0 top-1/2 p-4 -translate-y-1/2 text-white hover:text-amber-500 cursor-pointer"
-        onclick="moveSlide(-1)"
-        >❮</a
-      >
-
-      <!-- The next button -->
-      <a
-        class="absolute right-0 top-1/2 p-4 -translate-y-1/2 text-white hover:text-amber-500 cursor-pointer"
-        onclick="moveSlide(1)"
-        >❯</a
-      >
-    </div>
-    <!-- The dots -->
-    <div style="top: -20px" class="relative flex justify-center space-x-5">
-      <div
-        class="dot w-4 h-4 rounded-full cursor-pointer"
-        onclick="currentSlide(1)"
-      ></div>
-      <div
-        class="dot w-4 h-4 rounded-full cursor-pointer"
-        onclick="currentSlide(2)"
-      ></div>
-      <div
-        class="dot w-4 h-4 rounded-full cursor-pointer"
-        onclick="currentSlide(3)"
-      ></div>
-      <div
-        class="dot w-4 h-4 rounded-full cursor-pointer"
-        onclick="currentSlide(4)"
-      ></div>
-      <div
-        class="dot w-4 h-4 rounded-full cursor-pointer"
-        onclick="currentSlide(5)"
-      ></div>
     </div>
 
     <!-- Javascript code -->
     <script>
       // set the default active slide to the first one
       let slideIndex = 1;
-      showSlide(slideIndex);
+      showSlide(slideIndex, true);
 
       // change slide with the prev/next button
       function moveSlide(moveStep) {
@@ -160,14 +159,9 @@
 
       // change slide with the dots
       function currentSlide(n) {
-        showSlide((slideIndex = n));
-      }
-
-      function showSlide(n) {
         let i;
         const slides = document.getElementsByClassName("slide");
         const dots = document.getElementsByClassName("dot");
-
         if (n > slides.length) {
           slideIndex = 1;
         }
@@ -175,25 +169,108 @@
           slideIndex = slides.length;
         }
 
-        // hide all slides
-        for (i = 0; i < slides.length; i++) {
+        // Hide all slides
+        for (let i = 0; i < slides.length; i++) {
           slides[i].classList.add("hidden");
+          slides[i].classList.remove("fade-in");
+          slides[i].classList.remove("fade-out");
         }
 
-        // remove active status from all dots
+        // Remove active status from all dots
         for (i = 0; i < dots.length; i++) {
           dots[i].classList.remove("bg-[#717171]");
           dots[i].classList.add("bg-[#E8E6E3]");
         }
 
-        // show the active slide
+        // Show the active slide with fade-in
+        slides[n - 1].classList.remove("hidden");
+
+        // Highlight the active dot
+        dots[6 * (n - 1)].classList.remove("bg-[#E8E6E3]");
+        dots[6 * (n - 1)].classList.add("bg-[#717171]");
+      }
+
+      function showSlide(n, firstTime = false) {
+        let i;
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+
+        // Fade out all slides
+        for (let i = 0; i < slides.length; i++) {
+          if (i == n - 1) {
+            continue;
+          }
+          slides[i].classList.remove("fade-in");
+          slides[i].classList.add("fade-out");
+          slides[i].classList.add("hidden");
+        }
+
+        // Remove active status from all dots
+        for (i = 0; i < dots.length; i++) {
+          dots[i].classList.remove("bg-[#717171]");
+          dots[i].classList.add("bg-[#E8E6E3]");
+        }
+
+        // Show the active slide with fade-in
         slides[slideIndex - 1].classList.remove("hidden");
 
-        // highlight the active dot
+        if (!firstTime) {
+          slides[slideIndex - 1].classList.remove("fade-out");
+          slides[slideIndex - 1].classList.add("fade-in");
+        }
+
+        // Highlight the active dot
         dots[slideIndex - 1].classList.remove("bg-[#E8E6E3]");
         dots[slideIndex - 1].classList.add("bg-[#717171]");
       }
     </script>
+
+    <div class="min-h-screen">
+      <!-- The previous button -->
+      <a
+        class="absolute left-0 top-1/2 p-4 text-white hover:text-amber-500"
+        onclick="moveSlide(-1)"
+        >❮</a
+      >
+
+      <!-- The next button -->
+      <a
+        class="absolute right-0 top-1/2 p-4 text-white hover:text-amber-500"
+        onclick="moveSlide(1)"
+        >❯</a
+      >
+      <!-- The dots -->
+      <div
+        class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-center items-end space-x-5 mb-3"
+      >
+        <div
+          class="dot w-4 h-4 rounded-full cursor-pointer bg-[#717171]"
+          onclick="currentSlide(1)"
+        ></div>
+        <div
+          class="dot w-4 h-4 rounded-full cursor-pointer bg-[#E8E6E3]"
+          onclick="currentSlide(2)"
+        ></div>
+        <div
+          class="dot w-4 h-4 rounded-full cursor-pointer bg-[#E8E6E3]"
+          onclick="currentSlide(3)"
+        ></div>
+        <div
+          class="dot w-4 h-4 rounded-full cursor-pointer bg-[#E8E6E3]"
+          onclick="currentSlide(4)"
+        ></div>
+        <div
+          class="dot w-4 h-4 rounded-full cursor-pointer bg-[#E8E6E3]"
+          onclick="currentSlide(5)"
+        ></div>
+      </div>
+    </div>
 
     <!-- TODO : finetune gradient to something like in Figma -->
     <div class="flex justify-center">
