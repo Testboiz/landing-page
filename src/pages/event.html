@@ -12,24 +12,63 @@
       href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .fade-in {
+        animation: fadeIn 1s ease-in-out forwards;
+      }
+
+      .fade-out {
+        animation: fadeOut 1s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
     <script>
       function expand() {
         const hiddenDivs = document.getElementById("expanded");
         const selengkapnyaDown = document.getElementById("selengkapnya-down");
+        selengkapnyaDown.classList.remove("fade-in");
+        selengkapnyaDown.classList.add("fade-out");
         selengkapnyaDown.classList.add("hidden");
         hiddenDivs.classList.remove("hidden");
+        hiddenDivs.classList.remove("fade-out");
+        hiddenDivs.classList.add("fade-in");
+
         const divs = document.querySelectorAll("#expanded .to-hide");
         divs.forEach((div) => {
           div.classList.remove("hidden");
+          div.classList.remove("fade-out");
+          div.classList.add("fade-in");
         });
       }
       function collapse() {
         const hiddenDivs = document.getElementById("expanded");
         const selengkapnyaDown = document.getElementById("selengkapnya-down");
         selengkapnyaDown.classList.remove("hidden");
+
+        hiddenDivs.classList.remove("fade-in");
+        hiddenDivs.classList.add("fade-out");
         hiddenDivs.classList.add("hidden");
         const divs = document.querySelectorAll("#expanded .to-hide");
         divs.forEach((div) => {
+          div.classList.remove("fade-in");
+          div.classList.add("fade-out");
           div.classList.add("hidden");
         });
       }
