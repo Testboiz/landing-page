@@ -1126,16 +1126,16 @@ video {
   font-family: "Hedvig Letters Sans", sans-serif;
 }
 
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+
 .font-sansita {
   font-family: "Sansita Swashed", system-ui;
 }
 
 .font-sansita-normal {
   font-family: "Sansita", system-ui;
-}
-
-.font-inter {
-  font-family: "Inter", sans-serif;
 }
 
 .text-3xl {

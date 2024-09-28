@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- Fade in/out Animation class and css -->
     <style>
       .fade-in {
         animation: fadeIn 1s ease-in-out forwards;
@@ -45,6 +46,7 @@
       }
     </style>
     <script>
+      // Expand pengumuman accordion
       function expand() {
         const hiddenDivs = document.getElementById("expanded");
         const selengkapnyaDown = document.getElementById("selengkapnya-down");
@@ -62,6 +64,7 @@
           div.classList.add("fade-in");
         });
       }
+      // Collapse pengumuman accordion
       function collapse() {
         const hiddenDivs = document.getElementById("expanded");
         const selengkapnyaDown = document.getElementById("selengkapnya-down");
@@ -80,6 +83,7 @@
       }
     </script>
   </head>
+  <!-- Background Color -->
   <body class="bg-body_bg">
     <!-- Navbar component -->
     <header id="navbar-tob" class="z-10 sticky top-0 w-full">
@@ -107,6 +111,7 @@
         </div>
       </nav>
     </header>
+    <!-- Carousel Acara -->
     <div class="grid grid-cols-10 font-inter">
       <div class="col-span-1"></div>
       <div class="col-span-8">
@@ -175,20 +180,20 @@
               </div>
             </a>
           </div>
-          <!-- The previous button -->
+          <!-- Previous button -->
           <a
             class="absolute left-0 top-1/2 p-4 -translate-y-1/2 text-white hover:text-amber-500 cursor-pointer"
             onclick="moveSlide(-1)"
             >❮</a
           >
-          <!-- The next button -->
+          <!-- Next button -->
           <a
             class="absolute right-0 top-1/2 p-4 -translate-y-1/2 text-white hover:text-amber-500 cursor-pointer"
             onclick="moveSlide(1)"
             >❯</a
           >
         </div>
-        <!-- The dots -->
+        <!-- Dots -->
         <div style="top: -20px" class="relative flex justify-center space-x-5">
           <div
             class="dot w-4 h-4 rounded-full cursor-pointer bg-dot_active"
@@ -203,6 +208,7 @@
             onclick="currentSlide(3)"
           ></div>
         </div>
+        <!-- Accordion pengumuman -->
         <p class="whitespace-pre px-12 text-3xl">&Tab;&Tab;&Tab;Pengumuman</p>
         <div class="mx-auto my-6 w-3/4">
           <a href="./detail-pengumuman.html">

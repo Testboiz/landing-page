@@ -12,11 +12,12 @@
       href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap"
       rel="stylesheet"
     />
-    <!-- Sansita -->
+    <!-- Sansita font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- Fade in/out Animation class and css -->
     <style>
       .fade-in {
         animation: fadeIn 1s ease-in-out forwards;
@@ -45,6 +46,7 @@
       }
     </style>
   </head>
+  <!-- Background color -->
   <body class="bg-body_bg">
     <!-- Navbar component -->
     <header id="navbar-tob" class="sticky top-0 w-full z-[1]">
@@ -72,7 +74,9 @@
         </div>
       </nav>
     </header>
+    <!-- Carousel museum museum dalam The Old Batavia -->
     <div id="carousel landing" class="relative -z-10">
+      <!-- Foto foto carousel -->
       <div class="slide absolute">
         <img
           class="object-cover w-full h-auto"
@@ -151,7 +155,7 @@
       </div>
     </div>
 
-    <!-- Javascript code -->
+    <!-- Javascript code for carousel -->
     <script>
       // set the default active slide to the first one
       let slideIndex = 1;
@@ -235,22 +239,22 @@
         dots[slideIndex - 1].classList.add("bg-dot_active");
       }
     </script>
-
+    <!-- Komponen berisi kontrol carousel (dot dan previous/next button) -->
     <div class="min-h-screen">
-      <!-- The previous button -->
+      <!-- Previous button -->
       <a
         class="absolute left-0 top-1/2 p-4 text-white hover:text-amber-500"
         onclick="moveSlide(-1)"
         >❮</a
       >
 
-      <!-- The next button -->
+      <!-- Next button -->
       <a
         class="absolute right-0 top-1/2 p-4 text-white hover:text-amber-500"
         onclick="moveSlide(1)"
         >❯</a
       >
-      <!-- The dots -->
+      <!-- Dots -->
       <div
         class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-center items-end space-x-5 mb-3"
       >
@@ -277,7 +281,7 @@
       </div>
     </div>
 
-    <!-- TODO : finetune gradient to something like in Figma -->
+    <!-- Card Sejarah kawasan Kota Tua -->
     <div class="flex justify-center">
       <div class="m-6 max-w-3xl">
         <div
@@ -314,11 +318,12 @@
       </div>
     </div>
     <br />
-    <!-- TODO : use normal sansita not swashed -->
+    <!-- Caption -->
     <div class="flex justify-center text-xl font-sansita-normal">
       Museum di Batavia
     </div>
     <br />
+    <!-- Card-card yang menunjukkan tiap museum dalam The Old Batavia -->
     <div class="flex flex-col items-center">
       <div
         class="container mx-6 my-6 max-w-3xl rounded-2xl bg-gradient-to-r from-custom_init/80 via-custom_mid/90 to-custom_end/80"
@@ -466,6 +471,7 @@
         </div>
       </div>
     </div>
+    <!-- Footer -->
     <footer id="footer-tob" class="bg-header_footer_brown px-8">
       <div class="w-full text-white">
         <ul class="flex text-xl">

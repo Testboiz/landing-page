@@ -17,22 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-    <script>
-      function changeClass(id) {
-        const div = document.getElementById(id);
-        const divlist = document.getElementsByClassName("selection");
-        // find the div that is selected and change it to unselected color
-        for (divs of divlist) {
-          if (divs.classList.contains("bg-[#A5A4A3]")) {
-            divs.classList.replace("bg-[#A5A4A3]", "bg-dot_inactive");
-            break;
-          }
-        }
-        // change the selected div's color to selected color
-        div.classList.replace("bg-dot_inactive", "bg-[#A5A4A3]");
-      }
-    </script>
   </head>
+  <!-- Background Color -->
   <body class="bg-body_bg">
     <!-- Navbar component -->
     <header id="navbar-tob" class="sticky top-0 w-full">
@@ -60,6 +46,7 @@
         </div>
       </nav>
     </header>
+    <!-- Section Pengumuman  -->
     <div class="bg-body_bg font-inter">
       <p class="text-4xl text-center m-6">
         Museum Fatahilah ditutup sementara untuk pemeliharaan.

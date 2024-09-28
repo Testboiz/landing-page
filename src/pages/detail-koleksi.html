@@ -23,23 +23,25 @@
       rel="stylesheet"
     />
     <script>
+      // Dropdown category selection function
       function changeClass(id) {
         const div = document.getElementById(id);
         const divlist = document.getElementsByClassName("selection");
         const dropdown = document.getElementById("dropdown");
         // find the div that is selected and change it to unselected color
         for (divs of divlist) {
-          if (divs.classList.contains("bg-[#A5A4A3]")) {
-            divs.classList.replace("bg-[#A5A4A3]", "bg-dot_inactive");
+          if (divs.classList.contains("bg-dot-active")) {
+            divs.classList.replace("bg-dot-active", "bg-dot_inactive");
             break;
           }
         }
         // change the selected div's color to selected color
-        div.classList.replace("bg-dot_inactive", "bg-[#A5A4A3]");
+        div.classList.replace("bg-dot_inactive", "bg-dot-active");
         dropdown.value = id;
       }
     </script>
     <script>
+      // add event listener
       window.onload = () => {
         document
           .getElementById("dropdown")
@@ -50,6 +52,7 @@
       };
     </script>
   </head>
+  <!-- Background Color -->
   <body class="bg-body_bg">
     <!-- Navbar component -->
       <header id="navbar-tob" class="sticky top-0 w-full">
@@ -77,7 +80,9 @@
           </div>
         </nav>
       </header>
+      <!-- Memecah grid menjadi 10 bagian untuk sidebar dan main content -->
       <div class="grid grid-cols-10">
+        <!-- Sidebar -->
         <div class="bg-museum_selection col-span-3">
           <br />
           <br />
@@ -130,7 +135,9 @@
             </div>
           </div>
         </div>
+        <!-- Main Content -->
         <div class="bg-body_bg col-start-4 col-end-11">
+        <!-- Dropdown Menu  -->
         <div
           class="flex justify-between w-5/6 m-12 bg-dropdown_brown rounded-xl items-center mx-auto"
         >
@@ -147,7 +154,7 @@
             <option value="selection-6">Museum Bank Mandiri</option>
           </select>
         </div>
-
+          <!-- Detail Koleksi Museum -->
           <div class="bg-grey_content_bg m-6 p-2 rounded-xl font-inter">
             <p class="text-4xl text-center p-6">Keris</p>
             <div class="flex justify-center"><img class="max-h-80" src="../../images/keris detail.png" alt="Keris"></div>

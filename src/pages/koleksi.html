@@ -24,23 +24,25 @@
     />
 
     <script>
+      // Dropdown category selection function
       function changeClass(id) {
         const div = document.getElementById(id);
         const divlist = document.getElementsByClassName("selection");
         const dropdown = document.getElementById("dropdown");
         // find the div that is selected and change it to unselected color
         for (divs of divlist) {
-          if (divs.classList.contains("bg-[#A5A4A3]")) {
-            divs.classList.replace("bg-[#A5A4A3]", "bg-dot_inactive");
+          if (divs.classList.contains("bg-dot_active")) {
+            divs.classList.replace("bg-dot_active", "bg-dot_inactive");
             break;
           }
         }
         // change the selected div's color to selected color
-        div.classList.replace("bg-dot_inactive", "bg-[#A5A4A3]");
+        div.classList.replace("bg-dot_inactive", "bg-dot_active");
         dropdown.value = id;
       }
     </script>
     <script>
+      // add event listener
       window.onload = () => {
         document
           .getElementById("dropdown")
@@ -51,6 +53,7 @@
       };
     </script>
   </head>
+  <!-- Background Color -->
   <body class="bg-body_bg">
     <!-- Navbar component -->
     <header id="navbar-tob" class="sticky top-0 w-full">
@@ -78,7 +81,9 @@
         </div>
       </nav>
     </header>
+    <!-- Memecah grid menjadi 10 bagian untuk sidebar dan main content -->
     <div class="grid grid-cols-10">
+      <!-- Sidebar -->
       <div class="bg-museum_selection col-span-3">
         <br />
         <br />
@@ -131,7 +136,9 @@
           </div>
         </div>
       </div>
+      <!-- Main Content -->
       <div class="bg-body_bg col-start-4 col-end-11">
+        <!-- Dropdown menu -->
         <div
           class="flex justify-between w-5/6 m-12 bg-dropdown_brown rounded-xl items-center mx-auto"
         >
@@ -148,6 +155,7 @@
             <option value="selection-6">Museum Bank Mandiri</option>
           </select>
         </div>
+        <!-- Koleksi museum -->
         <div class="bg-grey_content_bg m-6 rounded-xl font-inter">
           <div class="grid grid-cols-3">
             <div class="col-span-1 m-10">
