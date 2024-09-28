@@ -20,12 +20,12 @@
         // find the div that is selected and change it to unselected color
         for (divs of divlist) {
           if (divs.classList.contains("bg-[#A5A4A3]")) {
-            divs.classList.replace("bg-[#A5A4A3]", "bg-[#E8E6E3]");
+            divs.classList.replace("bg-[#A5A4A3]", "bg-dot_inactive");
             break;
           }
         }
         // change the selected div's color to selected color
-        div.classList.replace("bg-[#E8E6E3]", "bg-[#A5A4A3]");
+        div.classList.replace("bg-dot_inactive", "bg-[#A5A4A3]");
         dropdown.value = id;
       }
     </script>
@@ -40,10 +40,10 @@
       };
     </script>
   </head>
-  <body class="bg-[#E7E6E2]">
+  <body class="bg-body_bg">
     <!-- Navbar component -->
     <header id="navbar-tob" class="sticky top-0 w-full">
-      <nav class="bg-[#805C3A] px-8">
+      <nav class="bg-header_footer_brown px-8">
         <div class="w-full text-white">
           <ul class="flex justify-between text-xl">
             <li class="py-2 font-sansita">
@@ -68,7 +68,7 @@
       </nav>
     </header>
     <div class="grid grid-cols-10">
-      <div class="bg-[#E3E1DE] col-span-3">
+      <div class="bg-museum_selection col-span-3">
         <br />
         <br />
         <div class="grid grid-cols-1 m-10">
@@ -82,35 +82,35 @@
             </div>
             <div
               id="selection-2"
-              class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3]"
+              class="selection w-full p-3 flex justify-center content-center bg-dot_inactive"
               onclick="changeClass('selection-2')"
             >
               Museum Fatahilah
             </div>
             <div
               id="selection-3"
-              class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3]"
+              class="selection w-full p-3 flex justify-center content-center bg-dot_inactive"
               onclick="changeClass('selection-3')"
             >
               Museum Wayang
             </div>
             <div
               id="selection-4"
-              class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3]"
+              class="selection w-full p-3 flex justify-center content-center bg-dot_inactive"
               onclick="changeClass('selection-4')"
             >
               Museum Bank Indonesia
             </div>
             <div
               id="selection-5"
-              class="selection w-full p-3 flex justify-center text-center content-center bg-[#E8E6E3]"
+              class="selection w-full p-3 flex justify-center text-center content-center bg-dot_inactive"
               onclick="changeClass('selection-5')"
             >
               Museum Seni Rupa dan Keramik
             </div>
             <div
               id="selection-6"
-              class="selection w-full p-3 flex justify-center content-center bg-[#E8E6E3] rounded-b-xl"
+              class="selection w-full p-3 flex justify-center content-center bg-dot_inactive rounded-b-xl"
               onclick="changeClass('selection-6')"
             >
               Museum Bank Mandiri
@@ -118,14 +118,14 @@
           </div>
         </div>
       </div>
-      <div class="bg-[#E7E6E2] col-start-4 col-end-11">
+      <div class="bg-body_bg col-start-4 col-end-11">
         <div
-          class="flex justify-between w-5/6 m-12 bg-[#CBBA9E] rounded-xl items-center mx-auto"
+          class="flex justify-between w-5/6 m-12 bg-dropdown_brown rounded-xl items-center mx-auto"
         >
           <p class="p-4">Sumber Koleksi</p>
           <select
             id="dropdown"
-            class="bg-[#EAE3D8] rounded-lg mx-6 px-3 min-h-10 w-1/3"
+            class="bg-dropdown_menu_brown rounded-lg mx-6 px-3 min-h-10 w-1/3"
           >
             <option value="selection-1">Semua Museum</option>
             <option value="selection-2">Museum Fatahilah</option>
@@ -135,7 +135,7 @@
             <option value="selection-6">Museum Bank Mandiri</option>
           </select>
         </div>
-        <div class="bg-[#A3A19B] m-6 rounded-xl">
+        <div class="bg-grey_content_bg m-6 rounded-xl">
           <div class="grid grid-cols-3">
             <div class="col-span-1 m-10">
               <a href="./detail-koleksi.html">
@@ -286,7 +286,7 @@
       </div>
     </div>
     <!-- Footer -->
-    <footer id="footer-tob" class="bg-[#805C3A] px-8">
+    <footer id="footer-tob" class="bg-header_footer_brown px-8">
       <div class="w-full text-white">
         <ul class="flex text-xl">
           <li class="flex py-1 font-sansita">
