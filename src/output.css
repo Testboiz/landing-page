@@ -1003,26 +1003,6 @@ video {
   background-color: rgb(227 225 222 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#805C3A\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(128 92 58 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#BDB7AB\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(189 183 171 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#D9D9D9\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(217 217 217 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#E7E6E2\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 230 226 / var(--tw-bg-opacity));
-}
-
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -1142,8 +1122,20 @@ video {
   text-align: center;
 }
 
+.font-hedvig-sans {
+  font-family: "Hedvig Letters Sans", sans-serif;
+}
+
 .font-sansita {
   font-family: "Sansita Swashed", system-ui;
+}
+
+.font-sansita-normal {
+  font-family: "Sansita", system-ui;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
 }
 
 .text-3xl {

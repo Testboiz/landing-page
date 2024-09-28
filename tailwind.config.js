@@ -36,6 +36,10 @@ module.exports = {
       },
       fontFamily: {
         'sansita': ['"Sansita Swashed"', 'system-ui'],
+        'sansita-normal': ['"Sansita"', 'system-ui'],
+        'hedvig-sans': ['"Hedvig Letters Sans"', 'sans-serif'],
+        'inter': ['"Inter"', 'sans-serif']
+
       },
       fontOpticalSizing: {
         auto: 'auto',
