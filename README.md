@@ -12,6 +12,6 @@ Landing page ini dibuat untuk kompetisi Shine With Techynox
 
 Made by
 
-- Rio Ferdiandinata (pemilik repository dan coding)
+- Rio Ferdiandinata (ketua kelompok, pemilik repository dan coding)
 - Justin Darya Yuswira (design)
 - Vinsensius Martin (struktur prototipe dan desain)
